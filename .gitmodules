@@ -1,0 +1,6 @@
+[submodule "Jupiter"]
+	path = Jupiter
+	url = https://github.com/Stealth2012/Jupiter.git
+[submodule "VkLib"]
+	path = VkLib
+	url = https://github.com/Stealth2012/VkLib.git

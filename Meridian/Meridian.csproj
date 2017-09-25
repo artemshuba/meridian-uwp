@@ -1,0 +1,695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{5B8E109A-8F3B-44EE-A6CA-4A1391DB814E}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Meridian</RootNamespace>
+    <AssemblyName>Meridian</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>Meridian_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>7B279E74A5BC91E712CF525890E442335FC3F043</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm</AppxBundlePlatforms>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS;SDKVERSION_14393</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="Meridian_StoreKey.pfx" />
+    <None Include="project.json" />
+    <PRIResource Include="Resources\Localization\ru-RU\Resources.resw" />
+    <PRIResource Include="Resources\Localization\en-US\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppState.cs" />
+    <Compile Include="Behaviors\ContextMenuBehavior.cs" />
+    <Compile Include="Behaviors\TrackListBehavior.cs" />
+    <Compile Include="Controls\AlbumCoverControl.xaml.cs">
+      <DependentUpon>AlbumCoverControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AppViewHelperControl.cs" />
+    <Compile Include="Controls\BackDrop.cs" />
+    <Compile Include="Controls\ImageTransitionControl.xaml.cs">
+      <DependentUpon>ImageTransitionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoopItemsPanel.cs" />
+    <Compile Include="Controls\MasonryWrapPanel.cs" />
+    <Compile Include="Controls\PaginationListView.xaml.cs">
+      <DependentUpon>PaginationListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PopupControl.xaml.cs">
+      <DependentUpon>PopupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchBox.cs" />
+    <Compile Include="Controls\SwipeableSplitView.cs" />
+    <Compile Include="Controls\ToolbarControl.xaml.cs">
+      <DependentUpon>ToolbarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\AlbumFilterTypeToStringConverter.cs" />
+    <Compile Include="Converters\AudioTimeSpanConverter.cs" />
+    <Compile Include="Converters\BoolToSelectionModeConverter.cs" />
+    <Compile Include="Converters\CollectionRangeConverter.cs" />
+    <Compile Include="Converters\GridLengthConverter.cs" />
+    <Compile Include="Converters\PostTimeConverter.cs" />
+    <Compile Include="Converters\SortTypeToStringConverter.cs" />
+    <Compile Include="Converters\StartPageToStringConverter.cs" />
+    <Compile Include="Converters\TemplateSelectors\CatalogBlockTemplateSelector.cs" />
+    <Compile Include="Converters\ValueToUnitsStringConverter.cs" />
+    <Compile Include="Enum\AlbumFilterType.cs" />
+    <Compile Include="Enum\PeopleSortType.cs" />
+    <Compile Include="Enum\RepeatMode.cs" />
+    <Compile Include="Enum\StartPage.cs" />
+    <Compile Include="Enum\TracksSortType.cs" />
+    <Compile Include="Interfaces\IAudio.cs" />
+    <Compile Include="Interfaces\IPlaylist.cs" />
+    <Compile Include="Ioc.cs" />
+    <Compile Include="Model\AudioContainer.cs" />
+    <Compile Include="Model\AudioGroup.cs" />
+    <Compile Include="Model\CachedImage.cs" />
+    <Compile Include="Model\AudioPlaylist.cs" />
+    <Compile Include="Model\AudioPost.cs" />
+    <Compile Include="Model\AudioVk.cs" />
+    <Compile Include="Model\CatalogBlock.cs" />
+    <Compile Include="Model\ColorScheme.cs" />
+    <Compile Include="Model\Discovery\DiscoveryAlbum.cs" />
+    <Compile Include="Model\Discovery\DiscoveryArtist.cs" />
+    <Compile Include="Model\Discovery\DiscoveryTrack.cs" />
+    <Compile Include="Model\Locale.cs" />
+    <Compile Include="Model\PlaylistVk.cs" />
+    <Compile Include="Model\Theme.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AudioService.cs" />
+    <Compile Include="Services\CacheService.cs" />
+    <Compile Include="Services\Discovery\DiscoveryService.cs" />
+    <Compile Include="Services\Discovery\MusicResolveService.cs" />
+    <Compile Include="Services\HostService.cs" />
+    <Compile Include="Services\ImageService.cs" />
+    <Compile Include="Services\Images\GrooveImageResolver.cs" />
+    <Compile Include="Services\Images\IImageResolver.cs" />
+    <Compile Include="Services\Images\LastFmImageResolver.cs" />
+    <Compile Include="Services\Logger.cs" />
+    <Compile Include="Services\Analytics.cs" />
+    <Compile Include="RemotePlay\RemotePlayApiClient.cs" />
+    <Compile Include="Services\RemotePlayService.cs" />
+    <Compile Include="Services\ScrobblingService.cs" />
+    <Compile Include="Services\TileHelper.cs" />
+    <Compile Include="Services\VK\VkTracksService.cs" />
+    <Compile Include="Services\VK\VkUserService.cs" />
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Extensions\CollectionExtensions.cs" />
+    <Compile Include="Utils\Helpers\ContextMenuHelper.cs" />
+    <Compile Include="Utils\Helpers\DateTimeHelper.cs" />
+    <Compile Include="Utils\Helpers\Resources.cs" />
+    <Compile Include="Utils\Helpers\TextHelper.cs" />
+    <Compile Include="Utils\Helpers\TimeBombHelper.cs" />
+    <Compile Include="Utils\Messaging\MessageMyMusicChanged.cs" />
+    <Compile Include="Utils\Messaging\MessagePlaylistRemoved.cs" />
+    <Compile Include="Utils\Messaging\MessageUserAuthChanged.cs" />
+    <Compile Include="ViewModel\Common\LastFmLoginViewModel.cs" />
+    <Compile Include="ViewModel\Common\PlaylistsListViewModel.cs" />
+    <Compile Include="ViewModel\Common\ExploreViewModel.cs" />
+    <Compile Include="ViewModel\Common\NowPlayingViewModel.cs" />
+    <Compile Include="ViewModel\Common\PopupViewModelBase.cs" />
+    <Compile Include="ViewModel\Common\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\Discovery\AlbumlistViewModel.cs" />
+    <Compile Include="ViewModel\Discovery\ArtistlistViewModel.cs" />
+    <Compile Include="ViewModel\Discovery\ArtistViewModel.cs" />
+    <Compile Include="ViewModel\Discovery\TracklistViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\PlayerViewModel.cs" />
+    <Compile Include="ViewModel\Discovery\AlbumViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\VK\EditPlaylistViewModel.cs" />
+    <Compile Include="ViewModel\VK\EditTrackViewModel.cs" />
+    <Compile Include="ViewModel\VK\FriendMusicViewModel.cs" />
+    <Compile Include="ViewModel\VK\FriendsViewModel.cs" />
+    <Compile Include="ViewModel\VK\MyMusicViewModel.cs" />
+    <Compile Include="ViewModel\VK\PlaylistViewModel.cs" />
+    <Compile Include="ViewModel\VK\PopularMusicViewModel.cs" />
+    <Compile Include="ViewModel\VK\SearchViewModel.cs" />
+    <Compile Include="ViewModel\VK\SelectPlaylistViewModel.cs" />
+    <Compile Include="ViewModel\VK\SocietyMusicViewModel.cs" />
+    <Compile Include="ViewModel\VK\SocietiesViewModel.cs" />
+    <Compile Include="ViewModel\VK\TrackLyricsViewModel.cs" />
+    <Compile Include="ViewModel\VK\TracksViewModelBase.cs" />
+    <Compile Include="View\Common\ExploreView.xaml.cs">
+      <DependentUpon>ExploreView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\LastFmLoginView.xaml.cs">
+      <DependentUpon>LastFmLoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\NowPlayingView.xaml.cs">
+      <DependentUpon>NowPlayingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Common\PlaylistsListView.xaml.cs">
+      <DependentUpon>PlaylistsListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\PlaylistView.xaml.cs">
+      <DependentUpon>PlaylistView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\AudioPostControl.xaml.cs">
+      <DependentUpon>AudioPostControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\MiniPlayerControl.xaml.cs">
+      <DependentUpon>MiniPlayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\PageHeaderControl.xaml.cs">
+      <DependentUpon>PageHeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\PlayerControl.xaml.cs">
+      <DependentUpon>PlayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Controls\TrackControl.xaml.cs">
+      <DependentUpon>TrackControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Discovery\AlbumListView.xaml.cs">
+      <DependentUpon>AlbumListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Discovery\ArtistlistView.xaml.cs">
+      <DependentUpon>ArtistlistView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Discovery\ArtistView.xaml.cs">
+      <DependentUpon>ArtistView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Discovery\TracklistView.xaml.cs">
+      <DependentUpon>TracklistView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SearchView.xaml.cs">
+      <DependentUpon>SearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Discovery\AlbumView.xaml.cs">
+      <DependentUpon>AlbumView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Settings\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\EditPlaylistView.xaml.cs">
+      <DependentUpon>EditPlaylistView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\EditTrackView.xaml.cs">
+      <DependentUpon>EditTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\FeedView.xaml.cs">
+      <DependentUpon>FeedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\FriendMusicView.xaml.cs">
+      <DependentUpon>FriendMusicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\FriendsView.xaml.cs">
+      <DependentUpon>FriendsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\MyMusicView.xaml.cs">
+      <DependentUpon>MyMusicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\PopularMusicView.xaml.cs">
+      <DependentUpon>PopularMusicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\RecommendationsView.xaml.cs">
+      <DependentUpon>RecommendationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\SelectPlaylistView.xaml.cs">
+      <DependentUpon>SelectPlaylistView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\SocietiesView.xaml.cs">
+      <DependentUpon>SocietiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\SocietyMusicView.xaml.cs">
+      <DependentUpon>SocietyMusicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VK\TrackLyricsView.xaml.cs">
+      <DependentUpon>TrackLyricsView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="Meridian_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\LargeTile.scale-100.png" />
+    <Content Include="Assets\LargeTile.scale-125.png" />
+    <Content Include="Assets\LargeTile.scale-150.png" />
+    <Content Include="Assets\LargeTile.scale-200.png" />
+    <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\SmallTile.scale-100.png" />
+    <Content Include="Assets\SmallTile.scale-125.png" />
+    <Content Include="Assets\SmallTile.scale-150.png" />
+    <Content Include="Assets\SmallTile.scale-200.png" />
+    <Content Include="Assets\SmallTile.scale-400.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-125.png" />
+    <Content Include="Assets\StoreLogo.scale-150.png" />
+    <Content Include="Assets\StoreLogo.scale-200.png" />
+    <Content Include="Assets\StoreLogo.scale-400.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="RemotePlay\web\img\light\volume.png" />
+    <Content Include="RemotePlay\web\img\light\volume_mute.png" />
+    <Content Include="RemotePlay\web\img\player.svg" />
+    <None Include="RemotePlay\web\index.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Content Include="RemotePlay\web\js\index.js" />
+    <Content Include="RemotePlay\web\js\utils.js" />
+    <Content Include="RemotePlay\web\lib\jquery-2.1.3.min.js" />
+    <Content Include="RemotePlay\web\lib\jquery-ui.min.js" />
+    <Content Include="RemotePlay\web\lib\jquery.ui.touch-punch.min.js" />
+    <Content Include="RemotePlay\web\lib\svg4everybody.js" />
+    <Content Include="RemotePlay\web\styles\index.css" />
+    <Content Include="RemotePlay\web\styles\player.css" />
+    <Content Include="Resources\Images\AlbumDefaultCover-Dark.scale-100.png" />
+    <Content Include="Resources\Images\AlbumDefaultCover-Dark.scale-200.png" />
+    <Content Include="Resources\Images\AlbumDefaultCover-Darkscale-400.png" />
+    <Content Include="Resources\Images\AlbumDefaultCover-Light.scale-100.png" />
+    <Content Include="Resources\Images\AlbumDefaultCover-Light.scale-200.png" />
+    <Content Include="Resources\Images\AlbumDefaultCover-Light.scale-400.png" />
+    <Content Include="Resources\Images\Login\Logo.scale-100.png" />
+    <Content Include="Resources\Images\Login\Logo.scale-200.png" />
+    <Content Include="Resources\Images\Login\Logo.scale-400.png" />
+    <Content Include="Resources\Images\Player\DefaultCover-Dark.png" />
+    <Content Include="Resources\Images\Player\DefaultCover-Light.png" />
+    <Content Include="Resources\Images\Player\pause-icon.png" />
+    <Content Include="Resources\Images\Player\play-icon.png" />
+    <Content Include="Resources\Images\Toolbar\refresh.png" />
+    <Content Include="Resources\Images\Toolbar\refresh.scale-200.png" />
+    <Content Include="Resources\Images\Toolbar\refresh.scale-400.png" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\AlbumCoverControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ImageTransitionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PaginationListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PopupControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ToolbarControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Accents\Blue.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Accents\System.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Accents\Sky.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Accents\Sea.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Accents\Purple.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Accents\Pink.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Accents\Mango.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Accents\Magenta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Accents\Emerald.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Accents\Red.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Styles\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Styles\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Styles\ListViewStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Styles\LoadingIndicatorStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Styles\PivotStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Styles\PlayerControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Styles\SplitViewStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Styles\TextBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\Styles\ToolbarStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="View\Common\ExploreView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\LastFmLoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\NowPlayingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Common\PlaylistsListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\PlaylistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\AudioPostControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\MiniPlayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\PageHeaderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\PlayerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Controls\TrackControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Discovery\AlbumListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Discovery\ArtistlistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Discovery\ArtistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Discovery\TracklistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Discovery\AlbumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Settings\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\EditPlaylistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\EditTrackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\FeedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\FriendMusicView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\FriendsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\MyMusicView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\PopularMusicView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\RecommendationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\SelectPlaylistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\SocietiesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\SocietyMusicView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VK\TrackLyricsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, Version=14.0">
+      <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
+    </SDKReference>
+    <SDKReference Include="WindowsMobile, Version=10.0.15063.0">
+      <Name>Windows Mobile Extensions for the UWP %28WindowsMobile, Version=10.0.15063.0%29</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jupiter\Jupiter.UWP\Jupiter.UWP.csproj">
+      <Project>{51f9f331-1237-4d09-b8b7-eb00be730c19}</Project>
+      <Name>Jupiter.UWP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\DeezerLib\DeezerLib.csproj">
+      <Project>{c3d43966-7279-4b88-8656-6f98e4cb1ee0}</Project>
+      <Name>DeezerLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\GrooveLib\GrooveApiClient.csproj">
+      <Project>{efc538c3-4ef6-43b4-b49a-152e35563bda}</Project>
+      <Name>GrooveApiClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\libs\LastFmLib\LastFmLib.csproj">
+      <Project>{6f475938-dfb7-4f5e-92f6-7f270b18ae1b}</Project>
+      <Name>LastFmLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RemoteKit\RemoteKit.Core\RemoteKit.Core.csproj">
+      <Project>{96c536a2-7b0b-45c5-9e50-6e6cd40a8758}</Project>
+      <Name>RemoteKit.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RemoteKit\RemoteKit.Server\RemoteKit.Server.csproj">
+      <Project>{6aca044c-4d36-409b-a673-899af04c1440}</Project>
+      <Name>RemoteKit.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VkLib\VkLib.csproj">
+      <Project>{53a806d8-1a75-41e3-b672-c75639e4c7a3}</Project>
+      <Name>VkLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
