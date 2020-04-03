@@ -560,6 +560,6 @@
             </StackPanel>
         </Grid>
 
-        <TextBlock Text="© Artem Shuba 2017" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,15" FontSize="12" Opacity="0.6" CharacterSpacing="20"/>
+        <TextBlock Text="© Artem Shuba 2011 ― 2020" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,15" FontSize="12" Opacity="0.6" CharacterSpacing="20"/>
     </Grid>
 </Page>

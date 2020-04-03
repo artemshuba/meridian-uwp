@@ -32,8 +32,6 @@ namespace Meridian.Model
 
         public bool IsAddedByCurrentUser { get; set; }
 
-        public bool IsFollowing { get; set; }
-
         public string Image { get; set; }
 
         public bool IsEditable { get; set; }
@@ -61,7 +59,6 @@ namespace Meridian.Model
             IsEditable = playlist.Original == null && IsAddedByCurrentUser;
             AccessKey = playlist.AccessKey;
             Description = playlist.Description;
-            IsFollowing = playlist.IsFollowing;
 
             if (playlist.Photo != null)
                 Image = playlist.Photo?.Photo135;

@@ -163,7 +163,6 @@
     <Compile Include="Services\CacheService.cs" />
     <Compile Include="Services\Discovery\DiscoveryService.cs" />
     <Compile Include="Services\Discovery\MusicResolveService.cs" />
-    <Compile Include="Services\HostService.cs" />
     <Compile Include="Services\ImageService.cs" />
     <Compile Include="Services\Images\GrooveImageResolver.cs" />
     <Compile Include="Services\Images\IImageResolver.cs" />
@@ -697,7 +696,7 @@
       <Version>1.4.1</Version>
     </PackageReference>
     <PackageReference Include="MvvmLightLibs">
-      <Version>5.3.0</Version>
+      <Version>5.4.1.1</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>

@@ -60,7 +60,6 @@ namespace Meridian
                 appView.TitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
             }
 
-            await HostService.Update();
             await AudioService.Instance.LoadState();
 
             var vk = SimpleIoc.Default.GetInstance<Vk>();

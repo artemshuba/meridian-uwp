@@ -31,7 +31,7 @@ namespace Meridian.ViewModel.VK
 
         public bool IsAddedToMyMusic
         {
-            get { return Playlist.IsFollowing || Playlist.IsAddedByCurrentUser; }
+            get { return Playlist.IsAddedByCurrentUser; }
         }
 
         public PlaylistViewModel()
@@ -84,7 +84,6 @@ namespace Meridian.ViewModel.VK
                 var result = await _tracksService.FollowPlaylist(Playlist);
                 if (result)
                 {
-                    Playlist.IsFollowing = true;
                     RaisePropertyChanged(nameof(IsAddedToMyMusic));
                 }
             }

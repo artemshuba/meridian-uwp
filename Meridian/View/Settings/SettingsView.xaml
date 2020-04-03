@@ -138,10 +138,7 @@
                    <Run Text="{Binding [Settings_AboutVersion], Source={StaticResource Resources}}" />
                    <Run Text="{Binding Version}"/>
                 </TextBlock>
-                <TextBlock FontSize="14" Opacity="0.6" Text="Copyright © Artem Shuba 2017" FontWeight="Normal"/>
-
-                <HyperlinkButton FontSize="14" NavigateUri="http://meridianvk.com" Content="http://meridianvk.com"
-                                 Foreground="{ThemeResource SystemControlForegroundAccentBrush}" Margin="0,-5,0,0"/>
+                <TextBlock FontSize="14" Opacity="0.6" Text="Copyright © Artem Shuba 2011 ― 2020" FontWeight="Normal"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
