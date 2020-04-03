@@ -37,7 +37,7 @@ namespace Meridian.ViewModel.VK
             {
                 if (Set(ref _selectedFilterTypeIndex, value))
                 {
-                    Load();
+                    _ = Load();
                 }
             }
         }
@@ -61,7 +61,7 @@ namespace Meridian.ViewModel.VK
             {
                 if (Set(ref _selectedGenre, value))
                 {
-                    Load();
+                    _ = Load();
                 }
             }
         }

@@ -195,7 +195,7 @@ namespace Meridian.ViewModel.Discovery
             });
         }
 
-        private async void Load()
+        private void Load()
         {
             LoadTopTracks();
             LoadAlbums();

@@ -17,7 +17,7 @@ namespace Meridian.Services
 
         public bool IsRunning => _remoteKitServer != null;
 
-        public async void Start()
+        public void Start()
         {
             try
             {

@@ -70,7 +70,7 @@ namespace Meridian.ViewModel.VK
                 if (Set(ref _tabIndex, value))
                 {
                     InitializeToolbar();
-                    Load();
+                    _ = Load();
                 }
             }
         }
@@ -265,7 +265,7 @@ namespace Meridian.ViewModel.VK
 
                 Tracks = new ObservableCollection<IAudio>(tracks);
             }
-            catch (VkAccessDeniedException ex)
+            catch (VkAccessDeniedException)
             {
                 TaskError("tracks", Resources.GetStringByKey("Society_TracksDisabled"));
             }

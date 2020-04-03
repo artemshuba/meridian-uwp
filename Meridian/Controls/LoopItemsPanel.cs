@@ -8,7 +8,6 @@ namespace Meridian.Controls
 {
     public class LoopItemsPanel : Panel
     {
-        private bool templateApplied;
         private double offsetSeparator;
 
         public double itemHeight = 100;
@@ -46,8 +45,6 @@ namespace Meridian.Controls
 
                 positionTop += desiredSize.Height;
             }
-
-            templateApplied = true;
 
             return finalSize;
         }

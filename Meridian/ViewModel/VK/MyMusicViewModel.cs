@@ -127,7 +127,7 @@ namespace Meridian.ViewModel.VK
                 {
                     InitializeToolbar();
 
-                    Load();
+                    _ = Load();
                 }
             }
         }

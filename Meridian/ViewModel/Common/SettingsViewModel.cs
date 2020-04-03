@@ -152,7 +152,7 @@ namespace Meridian.ViewModel.Common
                     dialog.Commands.Add(new UICommand(Resources.GetStringByKey("Close"), x => Application.Current.Exit()));
                     dialog.Commands.Add(new UICommand(Resources.GetStringByKey("Cancel")));
 
-                    dialog.ShowAsync();
+                    _ = dialog.ShowAsync();
                 }
             }
         }
