@@ -223,7 +223,7 @@ namespace Meridian.ViewModel
         {
             IsLoginFormVisible = false;
 
-            var p = _vk.LoginParams ?? new Dictionary<string, string>()
+            /*var p = _vk.LoginParams ?? new Dictionary<string, string>()
             {
                 ["version"] = "4.11.1",
                 ["func_v"] = "5"
@@ -231,7 +231,7 @@ namespace Meridian.ViewModel
 
             p["userId"] = _vk.AccessToken.UserId.ToString();
 
-            await _vk.Execute.GetBaseData(_vk.LoginParams);
+            await _vk.Execute.GetBaseData(_vk.LoginParams);*/
 
             User = await _vk.Users.Get(userId: _vk.AccessToken.UserId, fields: "photo,photo_100");
 
