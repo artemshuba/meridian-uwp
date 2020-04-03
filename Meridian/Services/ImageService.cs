@@ -13,7 +13,6 @@ namespace Meridian.Services
     public class ImageService
     {
         private IImageResolver _lastFmImageResolver;
-        private IImageResolver _grooveImageResolver;
 
         private CacheService _cacheService;
 
@@ -21,7 +20,6 @@ namespace Meridian.Services
 
         public ImageService()
         {
-            _grooveImageResolver = new GrooveImageResolver();
             _lastFmImageResolver = new LastFmImageResolver();
 
             _cacheService = Ioc.Resolve<CacheService>();
@@ -154,18 +152,14 @@ namespace Meridian.Services
 
         private async Task<Uri> ResolveAlbumCoverUri(string artist, string title)
         {
-            var uri = await _grooveImageResolver.GetAlbumCover(artist, title);
-            if (uri == null)
-                uri = await _lastFmImageResolver.GetAlbumCover(artist, title);
+            var uri = await _lastFmImageResolver.GetAlbumCover(artist, title);
 
             return uri;
         }
 
         private async Task<Uri> ResolveArtistImageUri(string artist, bool big = true)
         {
-            var uri = await _grooveImageResolver.GetArtistImageUri(artist, big);
-            if (uri == null)
-                uri = await _lastFmImageResolver.GetArtistImageUri(artist, big);
+            var uri = await _lastFmImageResolver.GetArtistImageUri(artist, big);
 
             return uri;
         }

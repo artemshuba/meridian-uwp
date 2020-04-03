@@ -6,7 +6,6 @@ using VkLib;
 using Windows.Storage;
 using DeezerLib;
 using Meridian.Services;
-using Microsoft.Groove.Api.Client;
 using Meridian.Services.Discovery;
 
 namespace Meridian
@@ -21,8 +20,6 @@ namespace Meridian
             SimpleIoc.Default.Register(() => new Vk(appId: "2274003", clientSecret: "hHbZxrka2uZ6jB1inYsH", apiVersion: "5.116", userAgent: "VKAndroidApp/5.52-4543 (Android 5.1.1; SDK 22; x86_64; unknown Android SDK built for x86_64; en; 320x240)"));
             SimpleIoc.Default.Register(() => new LastFm(apiKey: "a012acc1e5f8a61bc7e58238ce3021d8", apiSecret: "86776d4f43a72633fb37fb28713a7798"));
             SimpleIoc.Default.Register(() => new Deezer(appId: "229622", secretKey: "da90d8606bf99c8e1b403a80e03aefa3"));
-            SimpleIoc.Default.Register(() => GrooveClientFactory.CreateGrooveClient("00000000480DD98A", "czFUCiXbMxQ7M+z5ycKFPWs2W1S7TxFh"));
-            //SimpleIoc.Default.Register(() => new SQLiteAsyncConnection(DbPath));
 
             SimpleIoc.Default.Register<VkTracksService>();
             SimpleIoc.Default.Register<VkUserService>();

@@ -164,7 +164,6 @@
     <Compile Include="Services\Discovery\DiscoveryService.cs" />
     <Compile Include="Services\Discovery\MusicResolveService.cs" />
     <Compile Include="Services\ImageService.cs" />
-    <Compile Include="Services\Images\GrooveImageResolver.cs" />
     <Compile Include="Services\Images\IImageResolver.cs" />
     <Compile Include="Services\Images\LastFmImageResolver.cs" />
     <Compile Include="Services\Logger.cs" />
@@ -657,10 +656,6 @@
     <ProjectReference Include="..\libs\DeezerLib\DeezerLib.csproj">
       <Project>{c3d43966-7279-4b88-8656-6f98e4cb1ee0}</Project>
       <Name>DeezerLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\libs\GrooveLib\GrooveApiClient.csproj">
-      <Project>{efc538c3-4ef6-43b4-b49a-152e35563bda}</Project>
-      <Name>GrooveApiClient</Name>
     </ProjectReference>
     <ProjectReference Include="..\libs\LastFmLib\LastFmLib.csproj">
       <Project>{6f475938-dfb7-4f5e-92f6-7f270b18ae1b}</Project>
