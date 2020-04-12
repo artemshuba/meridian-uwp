@@ -12,7 +12,6 @@ using VkLib.Core.Groups;
 using VkLib.Error;
 using GalaSoft.MvvmLight.Messaging;
 using Meridian.Utils.Messaging;
-using VkLib.Core.Audio.Types;
 
 namespace Meridian.Services.VK
 {

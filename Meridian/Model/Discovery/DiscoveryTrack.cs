@@ -20,5 +20,7 @@ namespace Meridian.Model.Discovery
         public TimeSpan Duration { get; set; }
 
         public Uri Source { get; set; }
+
+        public Uri AlbumCover { get; set; }
     }
 }

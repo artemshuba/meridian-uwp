@@ -3,7 +3,6 @@ using Jupiter.Utils.Extensions;
 using Meridian.Interfaces;
 using System.Linq;
 using VkLib.Core.Audio;
-using VkLib.Core.Audio.Types;
 
 namespace Meridian.Model
 {

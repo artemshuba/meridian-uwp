@@ -63,6 +63,8 @@ namespace Meridian.Model
             get { return LyricsId != 0; }
         }
 
+        public Uri AlbumCover { get; set; }
+
         public AudioVk()
         {
 
@@ -79,6 +81,8 @@ namespace Meridian.Model
             LyricsId = audio.LyricsId;
             if (!string.IsNullOrEmpty(audio.Url))
                 Source = new Uri(audio.Url);
+            if (audio.Album != null && audio.Album.Thumb != null && !string.IsNullOrWhiteSpace(audio.Album.Thumb.Photo300))
+                AlbumCover = new Uri(audio.Album.Thumb.Photo300);
         }
     }
 }

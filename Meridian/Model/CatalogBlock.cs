@@ -1,6 +1,6 @@
 ﻿using Meridian.Interfaces;
 using System.Collections.Generic;
-using VkLib.Core.Audio.Types;
+using VkLib.Core.Audio;
 using VkLib.Core.Users;
 
 namespace Meridian.Model

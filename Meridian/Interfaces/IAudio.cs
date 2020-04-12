@@ -46,5 +46,10 @@ namespace Meridian.Interfaces
         /// Source
         /// </summary>
         Uri Source { get; set; }
+
+        /// <summary>
+        /// Album cover
+        /// </summary>
+        Uri AlbumCover { get; set; }
     }
 }

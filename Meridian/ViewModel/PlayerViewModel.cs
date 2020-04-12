@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight.Messaging;
 using Meridian.Utils.Messaging;
 using Meridian.Model;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Meridian.ViewModel
 {
@@ -277,8 +278,7 @@ namespace Meridian.ViewModel
 
                 var token = _trackImageCancellationToken.Token;
 
-
-                var image = await _imageService.GetTrackImage(audio.Artist, audio.Title, optimalImageWidth: 250);
+                var image = await _imageService.GetTrackImage(audio, optimalImageWidth: 250);
                 if (!token.IsCancellationRequested)
                 {
                     TrackImage = image;

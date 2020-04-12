@@ -1,4 +1,5 @@
-﻿using Meridian.Model;
+﻿using Meridian.Interfaces;
+using Meridian.Model;
 using Meridian.Services.Images;
 using System;
 using System.IO;
@@ -25,24 +26,32 @@ namespace Meridian.Services
             _cacheService = Ioc.Resolve<CacheService>();
         }
 
-        public async Task<CachedImage> GetTrackImage(string artist, string title, int optimalImageWidth = 0)
+        public async Task<CachedImage> GetTrackImage(IAudio track, int optimalImageWidth = 0)
         {
             try
             {
+                var artist = track.Artist;
+                var title = track.Title;
                 var imageKey = $"{artist}_{title}";
                 var cachedImage = await _cacheService.GetCachedImage(key: imageKey);
-                if (cachedImage == null)
-                {
-                    var imageUri = await ResolveAlbumCoverUri(artist, title);
-                    if (imageUri != null)
-                        cachedImage = await _cacheService.CacheImageFromUri(imageUri, key: imageKey, optimalImageWidth: optimalImageWidth);
-                    else
-                    {
-                        cachedImage = await GetArtistImage(artist, big: false, optimalImageWidth: optimalImageWidth);
+                if (cachedImage != null)
+                    return cachedImage;
 
-                        if (cachedImage == null)
-                            return DefaultTrackCover; //TODO dark theme support
-                    }
+                if (track.AlbumCover != null)
+                    cachedImage = await _cacheService.CacheImageFromUri(track.AlbumCover, imageKey, optimalImageWidth);
+
+                if (cachedImage != null)
+                    return cachedImage;
+
+                var imageUri = await ResolveAlbumCoverUri(artist, title);
+                if (imageUri != null)
+                    cachedImage = await _cacheService.CacheImageFromUri(imageUri, key: imageKey, optimalImageWidth: optimalImageWidth);
+                else
+                {
+                    cachedImage = await GetArtistImage(artist, big: false, optimalImageWidth: optimalImageWidth);
+
+                    if (cachedImage == null)
+                        return DefaultTrackCover; //TODO dark theme support
                 }
 
                 return cachedImage;
